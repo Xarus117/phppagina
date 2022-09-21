@@ -1,20 +1,3 @@
-<?php
-$servidor="localhost";
-$usuario="root";
-$password="";
-$bd="crub";
-
-
-$con=mysqli_connect($servidor,$usuario,$password,$bd);
-    if(!$con){
-        die("No se ha podido realizar la conexión_".mysqli_connect_error()."<br>");
-    }else{
-        mysqli_set_charset($con,"utf8");
-    
-        $sql="SELECT * FROM `productos`";
-
-        $consulta=mysqli_query($con,$sql);
-        ?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -40,13 +23,13 @@ $con=mysqli_connect($servidor,$usuario,$password,$bd);
                         <a class="nav-link" aria-current="page" href="./insertar.html">Insertar</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="./leer.html">Leer</a>
+                        <a class="nav-link" href="./leer.html">Leer</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./actualizar.html">Actualizar</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./eliminar.html">Eliminar</a>
+                      <li class="nav-item">
+                        <a class="nav-link active" href="./eliminar.html">Eliminar</a>
                     </li>
                 </ul>
             </div>
@@ -56,28 +39,18 @@ $con=mysqli_connect($servidor,$usuario,$password,$bd);
 
 <body class="p-3 mb-2 bg-dark text-white">
     <br><br>
-    <h1 class="display-2" id="titulo">Leer</h1><br><br>
+    <h1 class="display-2" id="titulo">Eliminar</h1><br><br>
 
     <div id="form">
 
-        <div class="p-3 mb-3 bg-light text-dark border border-3">
-            <?php
-  while($fila=$consulta->fetch_assoc()){
-    echo "</br> "; 
-    echo "<tr> -------------------";   
-    echo "</br> "; 
-    echo "<td> Nombre: ".$fila["nombre"]."</td>";
-    echo "</br> ";
-    echo "<td> Precio: ".$fila["precio"]."</td>";
-    echo "</br> ";
-    echo "<td> Cantidad: ".$fila["cantidad"]."</td>";
-    echo "</tr>";
-    echo "</br> "; 
-}
-         ?>
-        </div>
-
-
+        <form class="p-3 mb-3 bg-light text-dark border border-3" id="form">
+            <div>
+            <label for="exampleInputEmail1">ID:</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="ID del producto">
+                <br>
+                <button type="submit" class="btn btn-primary">Eliminar</button>
+            </div>
+        </form>
 
 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -94,12 +67,3 @@ $con=mysqli_connect($servidor,$usuario,$password,$bd);
 
 </html>
 
-<?php
-        
-        if(!$consulta){
-            die("No se ha podido realizar el update");
-        }else{
-            echo "La lectura se ha realizado correctamente";
-        }
-    }
-    ?>
