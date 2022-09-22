@@ -40,13 +40,7 @@ $con=mysqli_connect($servidor,$usuario,$password,$bd);
                         <a class="nav-link" aria-current="page" href="./insertar.html">Insertar</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="./leer.html">Leer</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./actualizar.html">Actualizar</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./eliminar.html">Eliminar</a>
+                        <a class="nav-link active" href="./leer.php">Leer</a>
                     </li>
                 </ul>
             </div>
