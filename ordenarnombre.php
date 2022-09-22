@@ -11,7 +11,7 @@ $con=mysqli_connect($servidor,$usuario,$password,$bd);
     }else{
         mysqli_set_charset($con,"utf8");
     
-        $sql="SELECT * FROM `productos`";
+        $sql="SELECT * FROM `productos` ORDER BY `nombre`";
 
         $consulta=mysqli_query($con,$sql);
         ?>
@@ -53,6 +53,9 @@ $con=mysqli_connect($servidor,$usuario,$password,$bd);
     <h1 class="display-2" id="titulo">Leer</h1><br><br>
 
     <div id="form">
+        <button onclick="window.location.href='ordenarnombre.php'">Ordenar por nombre</button>
+        <button onclick="window.location.href='ordenarprecio.php'">Ordenar por precio</button>
+        <button onclick="window.location.href='ordenarcantidad.php'">Ordenar por cantidad</button>
 
         <div class="p-3 mb-3 bg-light text-dark border border-3">
             <?php
