@@ -1,17 +1,5 @@
 <?php
-$nombre = $_POST["nombre"];
-$precio = $_POST["precio"];
-$cantidad = $_POST["cantidad"];
-
-if (isset($_POST["disponible"])) {
-    //$stok is checked and value = 1
-    $disponible = true;
-    echo "disponible";
-} else {
-    //$stok is nog checked and value=0
-    $disponible = false;
-    echo "no disponible";
-}
+$id = $_POST["id"];
 
 $servidor = "localhost";
 $usuario = "root";
@@ -39,14 +27,13 @@ if (!$con) {
         mysqli_set_charset($con, "utf8");
         echo "Se ha establecido correctamente la conexión a la base de datos";
 
-        $sql = "INSERT INTO `productos`(`id`,`nombre`, `precio`, `cantidad`, `disponible`) 
-        VALUES (NULL,'$nombre','$precio','$cantidad','$disponible')";
+        $sql = "DELETE FROM productos WHERE id=$id";
 
         $consulta = mysqli_query($con, $sql);
     }
 }
 
-header("Location: insertar.html");
+header("Location: eliminar.html");
 exit();
 
 ?>

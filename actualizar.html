@@ -36,12 +36,19 @@
 
 <body class="p-3 mb-2 bg-dark text-white">
     <br><br>
-    <h1 class="display-2" id="titulo">Insertar</h1><br><br>
+    <h1 class="display-2" id="titulo">Actualizar</h1><br><br>
 
     <div id="form">
 
-        <form action="./insertar.php" class="p-3 mb-3 bg-light text-dark border border-3" id="form" method="post">
+        <form action="./actualizar.php" class="p-3 mb-3 bg-light text-dark border border-3" id="form" method="post">
             <div>
+                <label for="exampleInputEmail1">ID:</label>
+                <input name="id" type="number" class="form-control" id="exampleInputEmail1"
+                    placeholder="Nombre del producto">
+                    <br>
+                    <label for="">Propiedades actualizadas</label>
+                    <br>
+                    <br>
                 <label for="exampleInputEmail1">Nombre:</label>
                 <input name="nombre" type="text" class="form-control" id="exampleInputEmail1"
                     placeholder="Nombre del producto">

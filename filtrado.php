@@ -4,6 +4,17 @@ $usuario = "root";
 $password = "";
 $bd = "crub";
 
+$filtro = $_POST["filtro"];
+$valorfiltro = $_POST["valorfiltro"];
+
+if ($filtro == 1) {
+    $filtro = "nombre";
+} elseif ($filtro == 2) {
+    $filtro = "precio";
+} else {
+    $filtro = "cantidad";
+}
+
 $con = mysqli_connect($servidor, $usuario, $password, $bd);
 if (!$con) {
     die(
@@ -15,7 +26,13 @@ if (!$con) {
 
     mysqli_set_charset($con, "utf8");
 
-    $sql = "SELECT * FROM `productos`";
+    if ($filtro == "precio") {
+        $sql = "SELECT * FROM `productos` WHERE $filtro = $valorfiltro";
+    } elseif ($filtro == "cantidad") {
+        $sql = "SELECT * FROM `productos` WHERE $filtro = $valorfiltro";
+    } else {
+        $sql = "SELECT * FROM `productos` WHERE $filtro = '$valorfiltro'";
+    }
 
     $consulta = mysqli_query($con, $sql);
     ?>
@@ -26,7 +43,7 @@ if (!$con) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=ç, initial-scale=1.0">
-    <title>Leer</title>
+    <title>Leer (Filtrado)</title>
     <link rel="stylesheet" href="./index.css">
 </head>
 
@@ -45,9 +62,6 @@ if (!$con) {
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="./leer.php">Leer</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./eliminar.html">Eliminar</a>
                     </li>
                 </ul>
             </div>
@@ -72,7 +86,7 @@ if (!$con) {
     <input name="valorfiltro" type="text">
     <button type="submit" class="btn btn-success">Filtrar</button>
     </form>
-    <br>
+    <br><br>
         <div class="p-3 mb-3 bg-light text-dark border border-3">
 
             <?php while ($fila = $consulta->fetch_assoc()) {
@@ -94,9 +108,6 @@ if (!$con) {
                 echo "</br> ";
             } ?>
         </div>
-
-
-
 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
             integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
