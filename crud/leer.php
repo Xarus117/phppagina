@@ -1,8 +1,15 @@
 <?php
+session_start();
+
 include 'conn.php';
 $sql = "SELECT * FROM `productos`";
 $run = mysqli_query($conn, $sql);
 ?>
+
+<?php
+echo $_SESSION['mote'];
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
