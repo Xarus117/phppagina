@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+* {
+    font-family: poppins;
+}
+
+body {
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+.intro {text-align: center; margin-top: 20px;}
+
+.d-flex {
+    margin-top: 80px;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+#button {
+    margin: 7px;
+    font-size: 40px;
+    transition: transform .2s;
+}
+
+#button:hover {
+    transform: scale(1.02);
+    box-shadow: 3px 3px 1px black;
+}
