@@ -2,7 +2,7 @@
 $dbhost = "localhost";
 $dbuser = "root";
 $dbpass = "";
-$db = "crub";
+$db = "crud";
 
 // Creación de la conexión 
 $conn = new mysqli($dbhost, $dbuser, $dbpass, $db);

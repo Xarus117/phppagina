@@ -1,14 +1,12 @@
 <?php
 session_start();
 
-include 'conn.php';
+include "conn.php";
 $sql = "SELECT * FROM `productos`";
 $run = mysqli_query($conn, $sql);
 ?>
 <p class="h4">
-    <?php
-    echo $_SESSION['mote'];
-    ?>
+    <?php echo $_SESSION["mote"]; ?>
 </p>
 <!DOCTYPE html>
 <html lang="es">
@@ -35,8 +33,7 @@ $run = mysqli_query($conn, $sql);
         <div class="p-3 mb-3 bg-light text-dark border border-1">
 
             <?php while ($fila = $run->fetch_assoc()) {
-                echo "</br> ";
-            ?>
+                echo "</br> "; ?>
                 <div class="item">
                 <?php
                 echo "<td> Nombre: " . $fila["nombre"] . "</td>";
