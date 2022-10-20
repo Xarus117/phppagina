@@ -13,8 +13,8 @@ body {
 
 .d-flex {
     margin-top: 80px;
-    margin-left: 30%;
-    margin-right: 30%;
+    margin-left: 20%;
+    margin-right: 20%;
 }
 
 #button {
@@ -26,4 +26,14 @@ body {
 #button:hover {
     transform: scale(1.02);
     box-shadow: 3px 3px 1px black;
+}
+
+#logout {
+    float: left;
+}
+
+.item {
+    
+    border: solid black;
+    padding: 15px;
 }
