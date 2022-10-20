@@ -42,5 +42,8 @@
             <button type="submit" name="registrar" class="btn btn-primary">Registrar</button>
         </div>
     </form>
+    <div class="intro">
+        <a href="./login.php" class="btn btn-secondary">Login</a>
+        </div>
 </body>
 </html>
