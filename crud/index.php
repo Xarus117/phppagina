@@ -20,10 +20,6 @@
     <div class="d-flex justify-content-center flex-column">
     <a href="registro.php" type="button" id="button" class="btn btn-success btn-lg btn-block">Registrar</a>
     <a href="login.php" type="button" id="button" class="btn btn-success btn-lg btn-block">Iniciar Sesión</a>
-        <a href="insertar.php" type="button" id="button" class="btn btn-primary btn-lg btn-block">Insertar</a><br>
-        <a href="actualizar.php" type="button" id="button" class="btn btn-primary btn-lg btn-block">Actualizar</a><br>
-        <a href="eliminar.php" type="button" id="button" class="btn btn-primary btn-lg btn-block">Eliminar</a><br>
-        <a href="leer.php" type="button" id="button" class="btn btn-primary btn-lg btn-block">Leer</a>
     </div>
 </body>
 

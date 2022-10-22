@@ -24,20 +24,21 @@ if (isset($_POST["registrar"])) {
     $run = mysqli_query($conn, $sql);
     echo "<script>alert('Se ha registrado correctamente');document.location='login.php'</script>";
 } elseif (isset($_POST["logout"])) {
-    echo "<script>alert('Has cerrado sesión');document.location='login.php'</script>";
     session_abort();
+    echo "<script>alert('Has cerrado sesión');document.location='login.php'</script>";
 } elseif (isset($_POST["login"])) {
     $mote = $_POST["mote"];
     $contrasena = $_POST["contrasena"];
     $contrasena = md5($contrasena);
-    $sql = "SELECT mote, contrasena FROM usuarios";
+    $sql = "SELECT mote, contrasena, admin FROM usuarios";
     $run = mysqli_query($conn, $sql);
-    $_SESSION["mote"] = "$mote";
+
 
     while ($fila = $run->fetch_assoc()) {
         if ($fila["mote"] == $mote && $fila["contrasena"] == $contrasena) {
+            $_SESSION["mote"] = "$mote";
+            $_SESSION["admin"] = $fila["admin"];
             echo "<script>alert('Has iniciado sesión');document.location='leer.php'</script>";
-            echo $_SESSION["mote"];
         }
     }
     echo "<script>alert('Mote/Contraseña incorrectos');document.location='login.php'</script>";
