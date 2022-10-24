@@ -11,31 +11,27 @@
 </head>
 
 <body class="p-3 mb-2 bg-dark bg-gradient text-white">
-    <div class="intro">
-        <h1 class="display-1">Login</h1>
-        <h2 class="display-4">Por Xarus</h2>
-    </div>
     <form action="sql.php" method="post">
-        <div class="d-flex justify-content-center flex-column">
+        <div class="centrar">
+            <div class="intro">
+                <h3 class="display-3">Login</h3><br>
+                <img src="./assets/log-in-outline.png" alt="Login">
+            </div>
+            <br>
             <div class="form-group">
                 <label>Mote</label>
-                <input name="mote" type="text" class="form-control" placeholder="Mote">
+                <input name="mote" pattern="[a-zA-Z0-9-]+" type="text" class="form-control" placeholder="Mote"><br>
             </div>
             <div class="form-group">
                 <label>Contraseña</label>
                 <input name="contrasena" type="password" class="form-control" placeholder="Contraseña"><br>
+            </div><br>
+            <div class="intro">
+                <button type="submit" name="login" class="btn btn-primary btn-lg">Iniciar sesión</button><br>
+                <a href="./registro.php" class="btn btn-secondary btn-sm">Registro</a>
             </div>
-            <button type="submit" name="login" class="btn btn-primary">Iniciar sesión</button>
-            <br>
-
+        </div>
     </form>
-    <div class="d-flex justify-content-center">
-        <a href="./registro.php" class="btn btn-secondary">Registro</a>
-    </div>
-    </div>
-
-
-
 </body>
 
 </html>

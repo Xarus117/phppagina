@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,44 +6,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css" />
 </head>
 
 <body class="p-3 mb-2 bg-dark bg-gradient text-white">
-<div class="intro">
-        <h1 class="display-1">Registrar</h1>
-        <h2 class="display-4">Por Xarus</h2>
-    </div>
+
     <form action="sql.php" method="post">
-        <div class="d-flex justify-content-center flex-column">
+        <div class="centrar">
+            <div class="intro">
+                <h3 class="display-3">Registrar</h3><br>
+                <img src="./assets/user-plus.png" alt="Register">
+            </div>
             <div class="form-group">
                 <label>Mote</label>
-                <input name="mote" type="text" class="form-control" placeholder="Mote">
+                <input name="mote" pattern="[a-zA-Z0-9-]+" type="text" class="form-control" placeholder="Mote"><br>
             </div>
             <div class="form-group">
                 <label>Correo electrónico</label>
-                <input name="correo" type="mail" class="form-control" placeholder="Correo electrónico">
+                <input name="correo" type="mail" class="form-control" placeholder="Correo electrónico"><br>
             </div>
             <div class="form-group">
                 <label>Contraseña</label>
-                <input name="contrasena" type="password" class="form-control" placeholder="Contraseña">
+                <input name="contrasena" type="password" class="form-control" placeholder="Contraseña"><br>
             </div>
             <div class="form-group">
                 <label>Nombre</label>
-                <input name="nombre" type="text" class="form-control" placeholder="Nombre">
+                <input name="nombre" pattern="[a-zA-Z0-9-]+" type="text" class="form-control" placeholder="Nombre"><br>
             </div>
             <div class="form-group">
                 <label>Apellido</label>
-                <input name="apellido" type="text" class="form-control" placeholder="Apellido"><br>
+                <input name="apellido" pattern="[a-zA-Z0-9-]+" type="text" class="form-control" placeholder="Apellido"><br>
             </div>
-            <button type="submit" name="registrar" class="btn btn-primary">Registrar</button>
+            <div class="intro">
+                <button type="submit" name="registrar" class="btn btn-primary btn-lg">Registrar</button><br>
+                <a href="./login.php" class="btn btn-secondary btn-sm">Login</a>
+            </div>
         </div>
     </form>
-    <div class="d-flex justify-content-center">
-        <a href="./login.php" class="btn btn-secondary">Login</a>
-    </div>
-    </div>
+
 </body>
+
 </html>

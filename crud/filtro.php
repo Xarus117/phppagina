@@ -71,15 +71,18 @@ include "conn.php";
 
 <body class="p-3 mb-2 bg-dark bg-gradient text-white">
 
+    <div class="intro">
+        <h1 class="display-1">Leer</h1>
+    </div>
+
+
+
     <div class="centrar2">
 
         <div>
-            <form action="filtro.php" method="POST">
-                <div class="btn-group mr-2">
-                    <input type="text" name="filtro" class="form-control" aria-label="Small" placeholder="Filtro..." aria-describedby="inputGroup-sizing-sm">
-                    <input type="submit" value="Filtrar" class="btn btn-success">
-                </div><br><br>
-            </form>
+            <div class="btn-group mr-2">
+                <input type="text" class="form-control" aria-label="Small" placeholder="Filtro..." aria-describedby="inputGroup-sizing-sm">
+            </div><br><br>
         </div>
 
 
@@ -88,8 +91,8 @@ include "conn.php";
                 <div class="row">
                     <div class="col-md-12">
                         <?php
-
-                        $sql = "SELECT * FROM productos";
+                        $filtro = $_POST['filtro'];
+                        $sql = "SELECT * FROM productos WHERE nombre LIKE '$filtro%'";
                         if ($resultado = mysqli_query($conn, $sql)) {
                             if (mysqli_num_rows($resultado) > 0) {
                                 echo '<table class="table table-bordered table-striped">';
@@ -114,9 +117,6 @@ include "conn.php";
                                     } else {
                                         echo "<td>" . 'NO' . "</td>";
                                     }
-                                    echo '<a href="read.php?id=' . $row['id'] . '" class="mr-3" title="View Record" data-toggle="tooltip"><span class="fa fa-eye"></span></a>';
-                                    echo '<a href="update.php?id=' . $row['id'] . '" class="mr-3" title="Update Record" data-toggle="tooltip"><span class="fa fa-pencil"></span></a>';
-                                    echo '<a href="delete.php?id=' . $row['id'] . '" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span></a>';
                                     echo "</td>";
                                     echo "</tr>";
                                 }
@@ -125,10 +125,10 @@ include "conn.php";
                                 // Free result set
                                 mysqli_free_result($resultado);
                             } else {
-                                echo '<div class="alert alert-danger"><em>No records were found.</em></div>';
+                                echo '<div class="alert alert-danger"><em>No hay registros.</em></div>';
                             }
                         } else {
-                            echo "Oops! Something went wrong. Please try again later.";
+                            echo "Ha ocurrido un error.";
                         }
                         ?>
                     </div>

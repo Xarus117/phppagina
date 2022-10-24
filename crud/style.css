@@ -9,13 +9,39 @@ body {
     height: 100%;
 }
 
-.intro {text-align: center; margin-top: 20px;}
+.intro {
+    text-align: center;
+}
 
 .d-flex {
     margin-top: 80px;
     margin-left: 20%;
     margin-right: 20%;
 }
+
+.centrar {
+    font-size: 20px;
+    margin-top: 50px;
+    margin-left: 600px;
+    margin-right: 600px;
+    background-color: white;
+    padding: 50px;
+    border-radius: 5%;
+    box-shadow: black 1px 1px 10px;
+    color: #007bff;
+}
+
+.centrar2 {
+    font-size: 32px;
+    margin-top: 50px;
+    margin-left: 400px;
+    margin-right: 400px;
+    background-color: white;
+    padding: 30px;
+    box-shadow: black 1px 1px 10px;
+    color: black;
+}
+
 
 #button {
     margin: 7px;
@@ -33,7 +59,7 @@ body {
 }
 
 .item {
-    
+
     border: solid black;
     padding: 15px;
 }
